@@ -1,0 +1,30 @@
+Using gdb we can't find any issue.
+
+----------Valgrind----------
+Command: valgrind --leak-check=yes ./q4
+==26442== Memcheck, a memory error detector
+==26442== Copyright (C) 2002-2022, and GNU GPL'd, by Julian Seward et al.
+==26442== Using Valgrind-3.20.0 and LibVEX; rerun with -h for copyright info
+==26442== Command: ./q4
+==26442==
+4
+==26442==
+==26442== HEAP SUMMARY:
+==26442==     in use at exit: 4 bytes in 1 blocks
+==26442==   total heap usage: 2 allocs, 1 frees, 1,028 bytes allocated
+==26442==
+==26442== 4 bytes in 1 blocks are definitely lost in loss record 1 of 1
+==26442==    at 0x4C2D0E5: malloc (vg_replace_malloc.c:393)
+==26442==    by 0x400528: main (q4.c:5)
+==26442==
+==26442== LEAK SUMMARY:
+==26442==    definitely lost: 4 bytes in 1 blocks
+==26442==    indirectly lost: 0 bytes in 0 blocks
+==26442==      possibly lost: 0 bytes in 0 blocks
+==26442==    still reachable: 0 bytes in 0 blocks
+==26442==         suppressed: 0 bytes in 0 blocks
+==26442==
+==26442== For lists of detected and suppressed errors, rerun with: -s
+==26442== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
+
+Valgrind tells us that their is memory leak.

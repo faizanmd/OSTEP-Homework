@@ -1,0 +1,5 @@
+Received following from gdb
+
+Program received signal SIGSEGV, Segmentation fault.
+0x00000000004004db in main () at null.c:9
+9		printf("%d", *a);
